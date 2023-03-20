@@ -1,0 +1,723 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+  <head>
+    <title>Optimisez vos diapositives de présentation avec xaringan</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="Francis Duval" />
+    <meta name="date" content="2023-03-20" />
+    <script src="libs/header-attrs-2.20/header-attrs.js"></script>
+    <script src="libs/htmlwidgets-1.6.1/htmlwidgets.js"></script>
+    <link href="libs/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet" />
+    <script src="libs/datatables-binding-0.27/datatables.js"></script>
+    <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+    <link href="libs/dt-core-1.12.1/css/jquery.dataTables.min.css" rel="stylesheet" />
+    <link href="libs/dt-core-1.12.1/css/jquery.dataTables.extra.css" rel="stylesheet" />
+    <script src="libs/dt-core-1.12.1/js/jquery.dataTables.min.js"></script>
+    <link href="libs/crosstalk-1.2.0/css/crosstalk.min.css" rel="stylesheet" />
+    <script src="libs/crosstalk-1.2.0/js/crosstalk.min.js"></script>
+    <link href="libs/panelset-0.2.6/panelset.css" rel="stylesheet" />
+    <script src="libs/panelset-0.2.6/panelset.js"></script>
+    <script src="libs/fabric-4.3.1/fabric.min.js"></script>
+    <link href="libs/xaringanExtra-scribble-0.0.1/scribble.css" rel="stylesheet" />
+    <script src="libs/xaringanExtra-scribble-0.0.1/scribble.js"></script>
+    <script>document.addEventListener('DOMContentLoaded', function() { window.xeScribble = new Scribble({"pen_color":["#FF0000"],"pen_size":3,"eraser_size":30,"palette":[]}) })</script>
+    <link rel="stylesheet" href="theme_cara.css" type="text/css" />
+  </head>
+  <body>
+    <textarea id="source">
+
+
+class: title-slide
+background-image: url(images/logo_chaire.jpg), url(images/background.jpg)
+background-size: 30%, cover
+background-position: 98% 98%, center
+
+.titre-page-titre[Optimisez vos diapositives de présentation avec xaringan]
+&lt;br /&gt;
+.sous-titre-page-titre[Séminaire de la Chaire CARA]
+&lt;br /&gt;
+&lt;br /&gt;
+***
+&lt;br /&gt;
+&lt;br /&gt;
+.sous-sous-titre-page-titre[.mon-style-bleu[par] Francis Duval &lt;br /&gt; .mon-style-bleu[à] l'Université du Québec à Montréal &lt;br /&gt; .mon-style-bleu[le] 22 mars 2023]
+
+---
+
+# Démarrage
+
+## Étape 1
+
+**Se créer un projet R**
+
+.pull-left[
+&lt;img src="images/projet_r.png" width="100%" style="display: block; margin: auto auto auto 0;" /&gt;
+]
+
+.pull-right[
+- Cocher « Create a git repository » et « Use renv with this project » (recommandé)
+]
+
+---
+
+# Démarrage
+
+.pull-left[
+## Étape 2
+
+**Installer le package `xaringan`**
+
+- `install.packages("xaringan")`
+
+## Étape 3
+
+**Créer une « présentation Ninja »**
+
+- Nouveau document `\(\rightarrow\)` R Markdown... `\(\rightarrow\)` From Template `\(\rightarrow\)` Ninja Presentation
+- Installer les packages si demandé
+- Sauvegarder le document: index.rmd
+]
+
+.pull-right[
+&lt;img src="images/ninja_pres.png" width="100%" style="display: block; margin: auto;" /&gt;
+]
+
+---
+
+# Démarrage
+
+.pull-left[
+
+## Étape 4
+**Ouvrir « Infinite Moon Reader »**
+- Addins `\(\rightarrow\)` Cliquer sur « Infinite Moon Reader »
+- Alternativement, exécuter `xaringan::infinite_moon_reader()` dans la console.
+- Visualiser les diapositives dans le *viewer*.
+
+## Étape 5
+
+**Commencer à créer votre présentation**
+
+- Certains éléments se modifient en temps réel dans le viewer.
+- Pour d'autres éléments (comme les images), il faut sauvegarder le fichier .rmd pour voir les changements.
+]
+
+.pull-right[
+&lt;img src="images/rstudio.png" width="100%" style="display: block; margin: auto;" /&gt;
+]
+
+---
+
+# Thème de la Chaire
+
+**Pour avoir le thème de la Chaire, il vous faudra:**
+
+1) Ajouter le fichier de style `theme_cara.css` à votre dossier projet, que vous pouvez trouver ici: [github.com/francisduval/xaringan_template_cara](https://github.com/francisduval/xaringan_template_cara)
+
+2) Changer le YAML pour ceci:
+```
+    title: "Titre"
+    subtitle: "Sous-titre"
+    author: "Prénom, Nom"
+    institute: "Université du Québec à Montréal"
+    date: "2023-03-20"
+    output:
+      xaringan::moon_reader:
+        seal: false
+        css: "theme_cara.css"
+        lib_dir: libs
+        nature:
+          ratio: "16:9"
+          highlightStyle: github
+          highlightLines: true
+          countIncrementalSlides: false
+```
+
+---
+
+# Thème de la Chaire
+
+**Pour avoir le thème de la Chaire, il vous faudra:**
+
+3) Créer un nouveau dossier « images » dans votre dossier projet et y déposer les 2 images nécessaires pour la page-titre, disponibles ici: [github.com/francisduval/xaringan_template_cara/tree/master/images](https://github.com/francisduval/xaringan_template_cara/tree/master/images)
+  - logo_chaire.jpg
+  - background.jpg
+
+---
+
+# Commandes RMarkdown
+
+### Toutes les commandes RMarkdown fonctionnent en xaringan
+
+--- 
+
+.pull-left[
+&lt;span style="text-decoration: underline"&gt;Titres&lt;/span&gt;
+## Titre niveau 2
+### Titre niveau 3
+
+--- 
+
+&lt;span style="text-decoration: underline"&gt;Liste&lt;/span&gt;
+- **Texte en gras** 
+- *Texte en italique*
+- Saut de ligne: `&lt;br&gt;`
+- Espace: `$~~$` (cette commande fait 2 espaces)
+- [Lien](https://learntheweb.courses/topics/markdown-yaml-cheat-sheet/)
+- ~~Barré~~
+  - Sous-item
+]
+
+.pull-right[
+&lt;span style="text-decoration: underline"&gt;Liste numérotée&lt;/span&gt;
+1. Code R non-évalué: \``r mean(rnorm(10))`\`
+2. Code R évalué: 0.0148123
+3. Équation: `\(\frac{d}{{dx}}\tan x = \sec ^2 x\)`
+4. Bloc *align* en LaTeX:
+`\begin{align*}
+  x &amp;= x\\
+  &amp;= x + y
+\end{align*}`
+
+--- 
+
+&lt;span style="text-decoration: underline"&gt;Table simple&lt;/span&gt;
+
+Titre 1 | Titre 2
+------------- | -------------
+Cellule 1 | Cellule 2
+Cellule 3 | Cellule 4
+]
+
+---
+
+# Images
+
+**2 manières d'inclure des images**
+
+- Image d'arrière-plan (à placer au tout début de la diapositive):
+
+```
+background-image: url(images/wallpaper.jpg)
+background-size: 100%
+background-position: cover
+```
+
+- Image avec `knitr` (à placer dans un bloc de code `R`):
+````
+```{r echo = T, out.width = "60%", fig.align = "center"}
+knitr::include_graphics("images/wallpaper.jpg")
+```
+````
+
+Évidemment, dans les 2 cas, il y a plein d'options pour changer l'apparence de l'image (dimensions, position, opacité, etc.)
+
+---
+
+background-image: url(images/wallpaper.jpg)
+background-size: 100%
+background-position: cover
+
+# Image d'arrière plan
+
+&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;
+**.white[C'est une image d'arrière-plan, donc on peut écrire par-dessus.]**
+
+---
+
+# Image avec knitr
+
+
+```r
+knitr::include_graphics("images/snorlax_gif.gif")
+```
+
+&lt;div class="figure" style="text-align: center"&gt;
+&lt;img src="images/snorlax_gif.gif" alt="Un Snorlax qui rampe" width="40%" /&gt;
+&lt;p class="caption"&gt;Un Snorlax qui rampe&lt;/p&gt;
+&lt;/div&gt;
+
+**L'image peut également être un GIF!**
+---
+
+# Table de données avec kableExtra
+
+
+```r
+kableExtra::kable(head(iris), format = "html")
+```
+
+&lt;table&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style="text-align:right;"&gt; Sepal.Length &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; Sepal.Width &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; Petal.Length &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; Petal.Width &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; Species &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; 5.1 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 3.5 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1.4 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.2 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; setosa &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; 4.9 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 3.0 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1.4 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.2 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; setosa &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; 4.7 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 3.2 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1.3 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.2 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; setosa &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; 4.6 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 3.1 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1.5 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.2 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; setosa &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; 5.0 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 3.6 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1.4 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.2 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; setosa &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:right;"&gt; 5.4 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 3.9 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1.7 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.4 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; setosa &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+Évidemment, il y a plein d'options pour personnaliser l'apparence dans la librairie `kableExtra`.
+
+---
+
+# Table interactive avec DT
+
+
+```r
+DT::datatable(mtcars, fillContainer = F, options = list(pageLength = 6))
+```
+
+<div class="datatables html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-d5edbed81cef3d74e5ba" style="width:100%;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-d5edbed81cef3d74e5ba">{"x":{"filter":"none","vertical":false,"fillContainer":false,"data":[["Mazda RX4","Mazda RX4 Wag","Datsun 710","Hornet 4 Drive","Hornet Sportabout","Valiant","Duster 360","Merc 240D","Merc 230","Merc 280","Merc 280C","Merc 450SE","Merc 450SL","Merc 450SLC","Cadillac Fleetwood","Lincoln Continental","Chrysler Imperial","Fiat 128","Honda Civic","Toyota Corolla","Toyota Corona","Dodge Challenger","AMC Javelin","Camaro Z28","Pontiac Firebird","Fiat X1-9","Porsche 914-2","Lotus Europa","Ford Pantera L","Ferrari Dino","Maserati Bora","Volvo 142E"],[21,21,22.8,21.4,18.7,18.1,14.3,24.4,22.8,19.2,17.8,16.4,17.3,15.2,10.4,10.4,14.7,32.4,30.4,33.9,21.5,15.5,15.2,13.3,19.2,27.3,26,30.4,15.8,19.7,15,21.4],[6,6,4,6,8,6,8,4,4,6,6,8,8,8,8,8,8,4,4,4,4,8,8,8,8,4,4,4,8,6,8,4],[160,160,108,258,360,225,360,146.7,140.8,167.6,167.6,275.8,275.8,275.8,472,460,440,78.7,75.7,71.1,120.1,318,304,350,400,79,120.3,95.1,351,145,301,121],[110,110,93,110,175,105,245,62,95,123,123,180,180,180,205,215,230,66,52,65,97,150,150,245,175,66,91,113,264,175,335,109],[3.9,3.9,3.85,3.08,3.15,2.76,3.21,3.69,3.92,3.92,3.92,3.07,3.07,3.07,2.93,3,3.23,4.08,4.93,4.22,3.7,2.76,3.15,3.73,3.08,4.08,4.43,3.77,4.22,3.62,3.54,4.11],[2.62,2.875,2.32,3.215,3.44,3.46,3.57,3.19,3.15,3.44,3.44,4.07,3.73,3.78,5.25,5.424,5.345,2.2,1.615,1.835,2.465,3.52,3.435,3.84,3.845,1.935,2.14,1.513,3.17,2.77,3.57,2.78],[16.46,17.02,18.61,19.44,17.02,20.22,15.84,20,22.9,18.3,18.9,17.4,17.6,18,17.98,17.82,17.42,19.47,18.52,19.9,20.01,16.87,17.3,15.41,17.05,18.9,16.7,16.9,14.5,15.5,14.6,18.6],[0,0,1,1,0,1,0,1,1,1,1,0,0,0,0,0,0,1,1,1,1,0,0,0,0,1,0,1,0,0,0,1],[1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,0,0,0,0,0,1,1,1,1,1,1,1],[4,4,4,3,3,3,3,4,4,4,4,3,3,3,3,3,3,4,4,4,3,3,3,3,3,4,5,5,5,5,5,4],[4,4,1,1,2,1,4,2,2,4,4,3,3,3,4,4,4,1,2,1,1,2,2,4,2,1,2,2,4,6,8,2]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>mpg<\/th>\n      <th>cyl<\/th>\n      <th>disp<\/th>\n      <th>hp<\/th>\n      <th>drat<\/th>\n      <th>wt<\/th>\n      <th>qsec<\/th>\n      <th>vs<\/th>\n      <th>am<\/th>\n      <th>gear<\/th>\n      <th>carb<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"pageLength":6,"columnDefs":[{"className":"dt-right","targets":[1,2,3,4,5,6,7,8,9,10,11]},{"orderable":false,"targets":0}],"order":[],"autoWidth":false,"orderClasses":false,"lengthMenu":[6,10,25,50,100]}},"evals":[],"jsHooks":[]}</script>
+
+---
+
+`$$\DeclareMathOperator*{\argmin}{argmin}$$`
+
+# Macros LaTeX
+
+Exemple: on veut utiliser l'opérateur *argmin* dans une équation. Ce n'est pas dans les opérateurs de base en LaTeX. Il faut donc déclarer l'opérateur entre 2 double symboles de $, n'importe où dans le fichier .Rmd:
+
+```
+$$\DeclareMathOperator*{\argmin}{argmin}$$
+```
+
+On peut ensuite l'utiliser:
+
+`\begin{align}
+  \boldsymbol{w}^* &amp;= \argmin_\boldsymbol{w} \frac{1}{n}\sum_{i=1}^n \ell(y, \widehat{y})\\
+  &amp;= \argmin_\boldsymbol{w} \frac{1}{n}\sum_{i=1}^n \ell(y, f(\boldsymbol{x}_i; \boldsymbol{w}))\\
+  &amp;= \argmin_\boldsymbol{w} J(\boldsymbol{w})
+\end{align}`
+
+---
+
+# Panelsets
+
+
+
+<style>.panelset{--panel-tab-active-foreground: #0051BA;--panel-tab-hover-foreground: #d22;--panel-tab-font-family: Roboto;}</style>
+Possible de personnaliser l'apparence avec `xaringanExtra::style_panelset()`.
+
+.panelset[
+.panel[.panel-name[Instructions]
+Pour pouvoir faire des panneaux, il faut avoir ce bloc de code n'importe où dans votre fichier .Rmd:
+
+````
+```{r xaringan-panelset, echo = F}
+xaringanExtra::use_panelset()
+```
+````
+
+]
+.panel[.panel-name[Code]
+```r
+plot(mtcars$hp, mtcars$mpg)
+```
+]
+.panel[.panel-name[Output]
+&lt;img src="index_files/figure-html/unnamed-chunk-8-1.png" width="40%" style="display: block; margin: auto;" /&gt;
+]
+]
+
+---
+
+# Panelsets
+
+.panelset.sideways[
+.panel[.panel-name[.bleu-gras[Code]]
+```r
+plot(mtcars$hp, mtcars$mpg)
+plot(mtcars$disp, mtcars$mpg)
+plot(mtcars$drat, mtcars$mpg)
+plot(mtcars$qsec, mtcars$mpg)
+```
+]
+.panel[.panel-name[mpg vs hp]
+&lt;img src="index_files/figure-html/unnamed-chunk-9-1.png" width="100%" style="display: block; margin: auto;" /&gt;
+]
+.panel[.panel-name[mpg vs disp]
+&lt;img src="index_files/figure-html/unnamed-chunk-10-1.png" width="100%" style="display: block; margin: auto;" /&gt;
+]
+.panel[.panel-name[mpg vs drat]
+&lt;img src="index_files/figure-html/unnamed-chunk-11-1.png" width="100%" style="display: block; margin: auto;" /&gt;
+]
+.panel[.panel-name[mpg vs qsec]
+&lt;img src="index_files/figure-html/unnamed-chunk-12-1.png" width="100%" style="display: block; margin: auto;" /&gt;
+]
+]
+
+---
+
+
+
+# Scribble
+
+- Simplement inclure ce bout de code:
+
+````
+```{r xaringanExtra-scribble, echo = F}
+xaringanExtra::use_scribble()
+```
+````
+
+- On peut ensuite dessiner en temps réel sur les diapositives en appuyant sur « s ».
+- Pour désactiver Scribble pour une diapositive en particulier: `class: no-scribble` au tout début de la diapositive.
+
+---
+
+# Diapositive avec notes
+
+- Mettre 3 points d'interrogation (`???`) pour séparer le contenu de la diapositive des notes.
+- Voici l'anatomie d'une diapositive avec notes:
+
+```
+---
+
+# Titre
+
+Contenu
+
+???
+
+Écrire les notes ici.
+
+---
+
+```
+
+- Pour voir les notes, simplement appuyer sur « p ».
+- Ça peut être d'une grande utilité lorsqu'on pratique la présentation.
+- Les notes fonctionnent dans le *viewer* et dans un HTML, mais pas dans un PDF.
+
+???
+
+`$$\DeclareMathOperator*{\argmin}{argmin}$$`
+- Note 1
+- Note 2
+- Équation: `\(E = mc^2\)`
+- Bloc *align*:
+`\begin{align}
+  \boldsymbol{w}^* &amp;= \argmin_\boldsymbol{w} \frac{1}{n}\sum_{i=1}^n \ell(y, \widehat{y})\\
+  &amp;= \argmin_\boldsymbol{w} \frac{1}{n}\sum_{i=1}^n \ell(y, f(\boldsymbol{x}_i; \boldsymbol{w}))\\
+  &amp;= \argmin_\boldsymbol{w} J(\boldsymbol{w})
+\end{align}`
+
+---
+
+# Intégration de vidéos YouTube
+
+**Vous pouvez facilement intégrer des vidéos dans une présentation xaringan. A titre d'exemple, voici les étapes à suivre pour intégrer des vidéos YouTube :**
+
+1. Sur un ordinateur, accédez à la vidéo YouTube que vous souhaitez intégrer.
+2. Sous la vidéo, cliquez sur SHARE
+3. Cliquez sur Intégrer.
+4. Dans la boîte qui s'affiche, copiez le code HTML.
+5. Collez le code dans votre document xaringan.
+
+.center[
+&lt;iframe width="560" height="300" src="https://www.youtube.com/embed/tPikgFoboBg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen&gt;&lt;/iframe&gt;
+]
+
+---
+
+class: center, top, inverse
+
+# Classes de diapositives 
+
+**Une diapositive peut avoir des propriétés, notamment `class` et `background-image`.**&lt;br&gt;&lt;br&gt;
+**Les propriétés doivent être écrites au début de la diapositive**&lt;br&gt;&lt;br&gt;
+
+.left[
+- `left`, `center`, et `right` pour l'alignement horizontal de tous les éléments sur la diapositive.
+- `top`, `middle`, et `bottom` peuvent être utilisés pour l'alignement vertical.
+- `inverse` permet d'utiliser les couleurs « inverses ».
+- Évidemment, les couleurs de la classe inverse peuvent être définies dans le fichier css.
+]
+
+**Voici l'anatomie de cette slide:**
+
+```
+---
+class: center, top, inverse
+
+# Classes de diapositives 
+
+Contenu
+
+---
+```
+
+---
+
+# Classes de contenu
+
+- Vous pouvez attribuer des classes à n'importe quel élément d'une diapositive.
+- La syntaxe est `.nomdelaclasse[contenu]`.
+- Il est possible de styliser n'importe quel élément de votre présentation à l'aide de CSS.
+  - Voici un site Internet qui semble intéressant pour générer du code CSS: [https://css-generator.netlify.app](https://css-generator.netlify.app)
+- Il y a quelques classes « built-in »:
+  - .left[`.left[]`]
+  - .center[`.center[]`]
+  - .right[`.right[]`]
+- Exemple de classe personnalisée qui colore le texte en blanc (à mettre dans le fichier css):
+```
+.blanc {
+  color: white;
+}
+```
+
+**Exercice: à l'aide du [générateur de CSS](https://css-generator.netlify.app), créer une classe .maclass[] qui sert à écrire du texte blanc, sur un fond bleu et avec une bordure noire.**
+
+.maclasse[Voici le résultat]
+
+---
+
+# `.pull-left[]` et `.pull-right[]`
+
+Permet de séparer la diapositive en 2:
+
+.pull-left[
+**Éléments à gauche**
+
+Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown...
+]
+
+.pull-right[
+**Éléments à droite**
+
+Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock...
+]
+
+Anatomie de la diapositive:
+
+```
+---
+
+# Titre
+
+.pull-left[
+Contenu à gauche
+]
+
+.pull-right[
+Contenu à droite
+]
+
+---
+```
+
+---
+
+# `.left-column[]` et `.right-column[]`
+
+Même chose que `.pull-left[]` et `.pull-right[]`, sauf qu'au lieu d'avoir une séparation 50/50, on a une séparation 25/75:
+
+.left-column[
+&lt;img src="images/snorlax.jpeg" height = "400px" width = "500px" /&gt;
+]
+
+.right-column[
+**Éléments à droite**
+
+Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock...
+
+- Évidemment, avec CSS, on peut définir n'importe quel « layout ».
+]
+
+---
+
+# 
+
+
+
+---
+
+# A
+
+- Ajouter un logo à toutes les slides: [https://pkg.garrickadenbuie.com/xaringanExtra/#/logo](https://pkg.garrickadenbuie.com/xaringanExtra/#/logo)
+---
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+"ratio": "16:9",
+"highlightStyle": "github",
+"highlightLines": true,
+"countIncrementalSlides": false
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();
+// add `data-at-shortcutkeys` attribute to <body> to resolve conflicts with JAWS
+// screen reader (see PR #262)
+(function(d) {
+  let res = {};
+  d.querySelectorAll('.remark-help-content table tr').forEach(tr => {
+    const t = tr.querySelector('td:nth-child(2)').innerText;
+    tr.querySelectorAll('td:first-child .key').forEach(key => {
+      const k = key.innerText;
+      if (/^[a-z]$/.test(k)) res[k] = t;  // must be a single letter (key)
+    });
+  });
+  d.body.setAttribute('data-at-shortcutkeys', JSON.stringify(res));
+})(document);
+(function() {
+  "use strict"
+  // Replace <script> tags in slides area to make them executable
+  var scripts = document.querySelectorAll(
+    '.remark-slides-area .remark-slide-container script'
+  );
+  if (!scripts.length) return;
+  for (var i = 0; i < scripts.length; i++) {
+    var s = document.createElement('script');
+    var code = document.createTextNode(scripts[i].textContent);
+    s.appendChild(code);
+    var scriptAttrs = scripts[i].attributes;
+    for (var j = 0; j < scriptAttrs.length; j++) {
+      s.setAttribute(scriptAttrs[j].name, scriptAttrs[j].value);
+    }
+    scripts[i].parentElement.replaceChild(s, scripts[i]);
+  }
+})();
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+// adds .remark-code-has-line-highlighted class to <pre> parent elements
+// of code chunks containing highlighted lines with class .remark-code-line-highlighted
+(function(d) {
+  const hlines = d.querySelectorAll('.remark-code-line-highlighted');
+  const preParents = [];
+  const findPreParent = function(line, p = 0) {
+    if (p > 1) return null; // traverse up no further than grandparent
+    const el = line.parentElement;
+    return el.tagName === "PRE" ? el : findPreParent(el, ++p);
+  };
+
+  for (let line of hlines) {
+    let pre = findPreParent(line);
+    if (pre && !preParents.includes(pre)) preParents.push(pre);
+  }
+  preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
+})(document);</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>
