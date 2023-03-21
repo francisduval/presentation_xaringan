@@ -33,12 +33,6 @@ background-position: 98% 98%, center
 
 ---
 
-class: animated slideInRight fadeOutLeft
-
-```{r xaringan-animate-css, echo=FALSE}
-xaringanExtra::use_animate_css()
-```
-
 # Qu'est-ce que xaringan?
 
 .left-column[
@@ -59,8 +53,6 @@ knitr::include_graphics("images/xaringan.png")
 
 ---
 
-class: animated slideInRight fadeOutLeft
-
 # Démarrage
 
 ## Étape 1
@@ -78,8 +70,6 @@ knitr::include_graphics("images/projet_r.png")
 ]
 
 ---
-
-class: animated slideInRight fadeOutLeft
 
 # Démarrage
 
@@ -107,8 +97,6 @@ knitr::include_graphics("images/ninja_pres.png")
 
 ---
 
-class: animated slideInRight fadeOutLeft
-
 # Démarrage
 
 .pull-left[
@@ -134,8 +122,6 @@ knitr::include_graphics("images/rstudio.png")
 ]
 
 ---
-
-class: animated slideInRight fadeOutLeft
 
 # Thème de la Chaire
 
@@ -164,8 +150,6 @@ class: animated slideInRight fadeOutLeft
 
 ---
 
-class: animated slideInRight fadeOutLeft
-
 # Thème de la Chaire
 
 **Pour avoir le thème de la Chaire, il vous faudra:**
@@ -175,8 +159,6 @@ class: animated slideInRight fadeOutLeft
   - background.jpg
 
 ---
-
-class: animated slideInRight fadeOutLeft
 
 # Commandes RMarkdown
 
@@ -224,8 +206,6 @@ Cellule 3 | Cellule 4
 
 ---
 
-class: animated slideInRight fadeOutLeft
-
 # Images
 
 **2 manières d'inclure des images**
@@ -249,7 +229,6 @@ knitr::include_graphics("images/wallpaper.jpg")
 
 ---
 
-class: animated slideInRight fadeOutLeft
 background-image: url(images/wallpaper.jpg)
 background-size: 100%
 background-position: cover
@@ -261,8 +240,6 @@ background-position: cover
 
 ---
 
-class: animated slideInRight fadeOutLeft
-
 # Image avec knitr
 
 ```{r echo = T, out.width = "40%", fig.align = "center", fig.cap = "Un Snorlax qui rampe"}
@@ -272,8 +249,6 @@ knitr::include_graphics("images/snorlax_gif.gif")
 **L'image peut également être un GIF!**
 
 ---
-
-class: animated slideInRight fadeOutLeft
 
 # Table de données avec kableExtra
 
@@ -285,8 +260,6 @@ kableExtra::kable(head(iris), format = "html")
 
 ---
 
-class: animated slideInRight fadeOutLeft
-
 # Table interactive avec DT
 
 ```{r}
@@ -294,8 +267,6 @@ DT::datatable(mtcars, fillContainer = F, options = list(pageLength = 6))
 ```
 
 ---
-
-class: animated slideInRight fadeOutLeft
 
 $$\DeclareMathOperator*{\argmin}{argmin}$$
 
@@ -316,8 +287,6 @@ On peut ensuite l'utiliser:
 \end{align}
 
 ---
-
-class: animated slideInRight fadeOutLeft
 
 # Panelsets
 
@@ -359,8 +328,6 @@ plot(mtcars$hp, mtcars$mpg)
 
 ---
 
-class: animated slideInRight fadeOutLeft
-
 # Panelsets
 
 .panelset.sideways[
@@ -396,8 +363,6 @@ plot(mtcars$qsec, mtcars$mpg)
 
 ---
 
-class: animated slideInRight fadeOutLeft
-
 ```{r xaringanExtra-scribble, echo = F}
 xaringanExtra::use_scribble()
 ```
@@ -417,8 +382,6 @@ xaringanExtra::use_scribble()
 
 ---
 
-class: animated slideInRight fadeOutLeft
-
 ```{r xaringan-tile-view, echo = FALSE}
 xaringanExtra::use_tile_view()
 ```
@@ -435,10 +398,7 @@ xaringanExtra::use_tile_view()
 
 - Vous pouvez ensuite visualiser un « overview » de vos diapositives en appuyant sur « o ».
 
-
 ---
-
-class: animated slideInRight fadeOutLeft
 
 # Diapositive avec notes
 
@@ -478,8 +438,6 @@ $$\DeclareMathOperator*{\argmin}{argmin}$$
 \end{align}
 
 ---
-
-class: animated slideInRight fadeOutLeft
 
 # Intégration de vidéos YouTube
 
@@ -526,8 +484,6 @@ Contenu
 
 ---
 
-class: animated slideInRight fadeOutLeft
-
 # Classes de contenu
 
 - Vous pouvez attribuer des classes à n'importe quel élément d'une diapositive.
@@ -550,8 +506,6 @@ class: animated slideInRight fadeOutLeft
 .maclasse[Voici le résultat]
 
 ---
-
-class: animated slideInRight fadeOutLeft
 
 # `.pull-left[]` et `.pull-right[]`
 
@@ -589,8 +543,6 @@ Contenu à droite
 
 ---
 
-class: animated slideInRight fadeOutLeft
-
 # `.left-column[]` et `.right-column[]`
 
 Même chose que `.pull-left[]` et `.pull-right[]`, sauf qu'au lieu d'avoir une séparation 50/50, on a une séparation 25/75:
@@ -609,8 +561,6 @@ Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots 
 
 ---
 
-class: animated slideInRight fadeOutLeft
-
 # xaringanthemer
 
 - `xaringanthemer` est une librairie qui permet de styliser les diapositives.
@@ -628,8 +578,6 @@ style_xaringan(
 Donc c'est une librairie qui peut être utile pour générer du code CSS (plutôt que de coder à partir de rien).
 
 ---
-
-class: animated slideInRight fadeOutLeft
 
 # Exporter sa présentation
 
@@ -658,8 +606,6 @@ knitr::include_graphics("images/knit_moon_reader.png")
 
 ---
 
-class: animated slideInRight fadeOutLeft
-
 # GitHub pages
 
 ```{r echo = F, out.width = "80%", fig.align = "center"}
@@ -668,10 +614,14 @@ knitr::include_graphics("images/github_pages.gif")
 
 ---
 
-
----
-
-# A
+# Autres infos utiles
 
 - Ajouter un logo à toutes les slides: [https://pkg.garrickadenbuie.com/xaringanExtra/#/logo](https://pkg.garrickadenbuie.com/xaringanExtra/#/logo)
----
+- Diapositives modifiables en temps réel: [https://github.com/gadenbuie/xaringanExtra#-editable](https://github.com/gadenbuie/xaringanExtra#-editable)
+- Animation lors des changements de diapositives:
+  - [https://github.com/gadenbuie/xaringanExtra#-animatecss](https://github.com/gadenbuie/xaringanExtra#-animatecss)
+- Vidéos sur xaringan:
+  - [https://www.youtube.com/watch?v=FHy6NseH8yk&t=4378s](https://www.youtube.com/watch?v=FHy6NseH8yk&t=4378s)
+  - [https://www.youtube.com/watch?v=RPFh3y9UAX4&t=5865s](https://www.youtube.com/watch?v=RPFh3y9UAX4&t=5865s)
+  - [https://www.youtube.com/watch?v=3n9nASHg9gc&t=1935s](https://www.youtube.com/watch?v=3n9nASHg9gc&t=1935s)
+- Etc.
