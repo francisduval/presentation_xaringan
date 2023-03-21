@@ -419,6 +419,27 @@ xaringanExtra::use_scribble()
 
 class: animated slideInRight fadeOutLeft
 
+```{r xaringan-tile-view, echo = FALSE}
+xaringanExtra::use_tile_view()
+```
+
+# Overview
+
+- Inclure ce bloc de code dans votre présentation:
+
+````
+```{r xaringan-tile-view, echo = FALSE}`r ''`
+xaringanExtra::use_tile_view()
+```
+````
+
+- Vous pouvez ensuite visualiser un « overview » de vos diapositives en appuyant sur « o ».
+
+
+---
+
+class: animated slideInRight fadeOutLeft
+
 # Diapositive avec notes
 
 - Mettre 3 points d'interrogation (`???`) pour séparer le contenu de la diapositive des notes.
