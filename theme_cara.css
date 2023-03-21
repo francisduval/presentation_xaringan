@@ -140,12 +140,13 @@ a, a > code {
 .right-column {
   width: 75%;
   float: right;
-  padding-top: 1em;
+  padding-top: 0;
 }
 .pull-left {
   float: left;
   width: 47%;
 }
+
 .pull-right {
   float: right;
   width: 47%;
@@ -375,8 +376,6 @@ table.dataTable.hover tbody tr:hover, table.dataTable.display tbody tr:hover {
   background-color: var(--black);
 }
 
-.sepia { filter: sepia(100%);}
-.border {border: 8px solid #000000;}
 
 .maclasse {
   color: white;
@@ -389,6 +388,17 @@ table.dataTable.hover tbody tr:hover, table.dataTable.display tbody tr:hover {
    font-weight: 700;
 }
 
-.remark-slide-content {
-    -moz-border-radius: 31px;
+.bleu-gros {
+   color: #0855a0;
+   font-weight: 600;
+   font-size: 30px;
+}
+
+.center2 {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
 }
