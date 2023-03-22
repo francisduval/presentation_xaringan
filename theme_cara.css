@@ -398,7 +398,6 @@ table.dataTable.hover tbody tr:hover, table.dataTable.display tbody tr:hover {
 /* Blocs */
 .bloc {
   display: block;
-  font-size: 24px;
   color: black;
   border-radius: 15px;
   border-style: solid;
@@ -429,7 +428,7 @@ table.dataTable.hover tbody tr:hover, table.dataTable.display tbody tr:hover {
 .titre-bloc {
   display: block;
   color: white;
-  font-size: 30px;
+  font-size: 24px;
   font-weight: 600;
   border-width: 5px;
   border-color: rgba(105, 105, 105, 0.4);
@@ -456,7 +455,7 @@ table.dataTable.hover tbody tr:hover, table.dataTable.display tbody tr:hover {
   border-top-width: 0px;
   border-top-left-radius: 0px;
   border-top-right-radius: 0px;
-  margin-top: -30.5px;
+  margin-top: -25px;
 }
 
 .bloc.titre.gris {
