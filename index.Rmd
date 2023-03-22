@@ -29,7 +29,8 @@ background-position: 98% 98%, center
 ***
 <br />
 <br />
-.sous-sous-titre-page-titre[.mon-style-bleu[par] Francis Duval <br /> .mon-style-bleu[à] l'Université du Québec à Montréal <br /> .mon-style-bleu[le] 22 mars 2023]
+.sous-sous-titre-page-titre[.mon-style-bleu[par] Francis Duval <br> .mon-style-bleu[à] l'Université du Québec à Montréal <br> .mon-style-bleu[le] 22 mars 2023] <br>
+.sous-sous-titre-page-titre[.mon-style-bleu[lien:] .petit[francisduval.github.io/presentation_xaringan]]
 
 ---
 
@@ -624,7 +625,7 @@ knitr::include_graphics("images/github_pages.gif")
   - [https://www.youtube.com/watch?v=FHy6NseH8yk&t=4378s](https://www.youtube.com/watch?v=FHy6NseH8yk&t=4378s)
   - [https://www.youtube.com/watch?v=RPFh3y9UAX4&t=5865s](https://www.youtube.com/watch?v=RPFh3y9UAX4&t=5865s)
   - [https://www.youtube.com/watch?v=3n9nASHg9gc&t=1935s](https://www.youtube.com/watch?v=3n9nASHg9gc&t=1935s)
-- Etc.
+- Lien GitHub du code pour les présentes diapositives: [https://github.com/francisduval/presentation_xaringan](https://github.com/francisduval/presentation_xaringan)
 
 ---
 

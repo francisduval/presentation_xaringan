@@ -394,6 +394,9 @@ table.dataTable.hover tbody tr:hover, table.dataTable.display tbody tr:hover {
    font-size: 30px;
 }
 
+.petit{
+  font-size: 21px;
+}
 
 /* Blocs */
 .bloc {
