@@ -628,19 +628,51 @@ knitr::include_graphics("images/github_pages.gif")
 
 ---
 
-# Bloc
+# Bonus - Blocs
 
-
-.exemple[
-Nous savons que:
+.bloc.gris[
+Un bloc gris avec du texte et une équation:
 \begin{align}
-  P(Y = y) = \frac{\lambda^y e^{-\lambda}}{y!}
+  E = mc^2
 \end{align}
+]
 
-et que:
-
+.bloc.bleu[
+Un bloc bleu avec du texte et une équation:
 \begin{align}
-  c(y, \phi) = -ln(y!)
+  E = mc^2
 \end{align}
+]
+
+.bloc.rouge[
+Un bloc rouge avec du texte et une équation:
+\begin{align}
+  E = mc^2
+\end{align}
+]
+
+---
+
+# Bonus - Blocs avec bannière titrée
+
+.titre-bloc.gris[
+Théorème gris
+]
+.bloc.titre.gris[
+Un bloc gris avec bannière titrée
+]
+
+.titre-bloc.bleu[
+Théorème bleu
+]
+.bloc.titre.bleu[
+Un bloc bleu avec bannière titrée
+]
+
+.titre-bloc.rouge[
+Théorème rouge
+]
+.bloc.titre.rouge[
+Un bloc rouge avec bannière titrée
 ]
 
