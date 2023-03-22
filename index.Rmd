@@ -625,3 +625,22 @@ knitr::include_graphics("images/github_pages.gif")
   - [https://www.youtube.com/watch?v=RPFh3y9UAX4&t=5865s](https://www.youtube.com/watch?v=RPFh3y9UAX4&t=5865s)
   - [https://www.youtube.com/watch?v=3n9nASHg9gc&t=1935s](https://www.youtube.com/watch?v=3n9nASHg9gc&t=1935s)
 - Etc.
+
+---
+
+# Bloc
+
+
+.exemple[
+Nous savons que:
+\begin{align}
+  P(Y = y) = \frac{\lambda^y e^{-\lambda}}{y!}
+\end{align}
+
+et que:
+
+\begin{align}
+  c(y, \phi) = -ln(y!)
+\end{align}
+]
+
