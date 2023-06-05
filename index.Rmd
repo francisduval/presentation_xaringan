@@ -34,6 +34,16 @@ background-position: 98% 98%, center
 
 ---
 
+background-image: url(images/slido.png)
+background-size: 80%
+background-position: 45% 85%
+
+# Sondage
+
+[.white[Lien]](https://wall.sli.do/event/2VxpnJFhrXsUnoKepmRMzy?section=e7bb533a-3ad6-4e64-9c83-51dd860c429a)
+
+---
+
 # Qu'est-ce que xaringan?
 
 .left-column[
@@ -52,11 +62,6 @@ knitr::include_graphics("images/xaringan.png")
 .bleu-gros[3) Styliser avec CSS]
 ]
 
----
-
-# Sondage
-
-<iframe src="https://app.sli.do/event/2VxpnJFhrXsUnoKepmRMzy" height="100%" width="100%" frameBorder="0" style="min-height: 500px;" title="Slido"></iframe>
 
 ---
 
