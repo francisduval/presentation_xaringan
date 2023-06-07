@@ -1,6 +1,6 @@
 ---
-title: "Optimisez vos diapositives de présentation avec xaringan"
-subtitle: "Séminaire de la Chaire Co-operators en analyse des risques actuariels"
+title: "Le pouvoir du xaringan : créez des présentations élégantes et reproductibles avec RMarkdown"
+subtitle: "Séminaire d'été d'actuariat et de statistique"
 author: "Francis Duval"
 institute: "Université du Québec à Montréal"
 date: "`r Sys.Date()`"
@@ -21,15 +21,15 @@ background-image: url(images/logo_chaire.jpg), url(images/background.jpg)
 background-size: 30%, cover
 background-position: 98% 98%, center
 
-.titre-page-titre[Optimisez vos diapositives de présentation avec xaringan]
+.titre-page-titre[Le pouvoir du xaringan : créez des présentations élégantes et reproductibles avec RMarkdown]
 <br />
-.sous-titre-page-titre[Séminaire de la Chaire CARA]
+.sous-titre-page-titre[Séminaire d'été d'actuariat et de statistique]
 <br />
 <br />
 ***
 <br />
 <br />
-.sous-sous-titre-page-titre[.mon-style-bleu[par] Francis Duval <br> .mon-style-bleu[à] l'Université du Québec à Montréal <br> .mon-style-bleu[le] 22 mars 2023] <br>
+.sous-sous-titre-page-titre[.mon-style-bleu[par] Francis Duval <br> .mon-style-bleu[à] l'Université du Québec à Montréal <br> .mon-style-bleu[le] 7 juin 2023] <br>
 .sous-sous-titre-page-titre[.mon-style-bleu[lien:] .petit[francisduval.github.io/presentation_xaringan]]
 
 ---
